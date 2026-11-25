@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="es-EC">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pago al día | App para cobrar, pagar y anotar deudas en tu tienda</title>
+<meta name="description" content="Pago al día es la app con solo 3 botones para cobrar, pagar y anotar las deudas (fiados) de tu tienda. Escríbenos por WhatsApp y pide tu enlace de descarga.">
+<meta name="theme-color" content="#FFF4E6">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_EC">
+<meta property="og:site_name" content="Pago al día">
+<meta property="og:title" content="Pago al día | Cobra, paga y anota. Tu tienda al día sin complicaciones.">
+<meta property="og:description" content="La app con 3 botones (Cobrar, Pagar y Anotar deudas) para dueños de tiendas y microempresarios. Pídela por WhatsApp.">
+<!-- [PENDIENTE] og:url  -> la dirección pública final de esta página -->
+<!-- [PENDIENTE] og:image -> imagen de 1200 x 630 px con URL pública (por ejemplo, el logo sobre fondo crema) -->
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 512%22 role=%22img%22 aria-label=%22Pago al d%C3%ADa%22%3E %3Crect width=%22512%22 height=%22512%22 rx=%22112%22 fill=%22%23FFF4E6%22/%3E %3Cg fill=%22%23FF7E67%22 stroke=%22%23FF7E67%22 stroke-width=%2219.92%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22%3E %3Cpath d=%22M248.50612244897957 288.61632653061224H185.76326530612243V429.0408163265306H128.99591836734692V82.9591836734694H248.50612244897957Q288.3428571428571 82.9591836734694 315.9795918367347 96.65306122448982Q343.61632653061224 110.34693877551024 357.3102040816326 133.75102040816327Q371.004081632653 157.1551020408163 371.004081632653 186.03673469387755Q371.004081632653 212.42857142857142 358.55510204081634 235.8326530612245Q346.1061224489796 259.23673469387757 318.71836734693875 273.9265306122449Q291.33061224489796 288.61632653061224 248.50612244897957 288.61632653061224ZM312.74285714285713 186.03673469387755Q312.74285714285713 129.26938775510206 248.50612244897957 129.26938775510206H185.76326530612243V242.30612244897958H248.50612244897957Q280.87346938775505 242.30612244897958 296.8081632653061 227.61632653061224Q312.74285714285713 212.9265306122449 312.74285714285713 186.03673469387755Z%22/%3E %3C/g%3E %3Cpolyline points=%22225.97,187.65 244.60,207.20 275.33,166.23%22 fill=%22none%22 stroke=%22%2342A8A1%22 stroke-width=%2232.59%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E %3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --coral: #FF7E67;        /* fondos, botones, ilustración */
+    --turq: #42A8A1;         /* fondos, botones, ilustración */
+    --cream: #FFF4E6;        /* fondo de la página */
+    --ink: #1F2A2A;          /* texto principal y texto sobre botones */
+    --ink-soft: #3D4A4A;     /* texto secundario (más de 9:1 sobre crema) */
+    --coral-text: #C2432C;   /* coral para TEXTO (4,68:1 sobre crema) */
+    --turq-text: #267A74;    /* turquesa para TEXTO (4,69:1 sobre crema) */
+    --coral-tint: #FFD9D1;
+    --white: #FFFFFF;
+    --radius: 24px;
+    --wrap: 1120px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  body {
+    margin: 0; background: var(--cream); color: var(--ink);
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.0625rem; line-height: 1.6;
+  }
+  img, svg { max-width: 100%; }
+  h1, h2, h3 { line-height: 1.15; margin: 0 0 .5em; font-weight: 700; }
+  p { margin: 0 0 1em; }
+  a { color: var(--turq-text); }
+  .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 16px; }
+  section { padding: 56px 0; }
+  .eyebrow { display: inline-block; font-size: .875rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--turq-text); margin-bottom: .75rem; }
+  h2 { font-size: clamp(1.65rem, 5vw, 2.35rem); }
+  .lead { font-size: 1.125rem; color: var(--ink-soft); }
+  .center { text-align: center; }
+  .center .lead { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+  /* Enlace para saltar al contenido */
+  .skip { position: absolute; left: -9999px; top: 8px; background: var(--ink); color: var(--cream); padding: 12px 16px; border-radius: 12px; z-index: 100; }
+  .skip:focus { left: 8px; }
+
+  /* Botones: verbo de acción, texto oscuro, borde grueso */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 56px; padding: 12px 28px; border-radius: 999px;
+    background: var(--coral); color: var(--ink); border: 3px solid var(--ink);
+    font: 700 1.0625rem/1.2 'Poppins', system-ui, sans-serif; text-decoration: none; text-align: center;
+    transition: transform .15s ease, background-color .15s ease;
+  }
+  .btn:hover { background: #FF9783; transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+  .btn svg { flex: none; }
+  .btn-sm { min-height: 48px; padding: 8px 18px; font-size: .9375rem; border-width: 2px; }
+  .btn-lg { min-height: 64px; padding: 14px 34px; font-size: 1.1875rem; }
+  @media (max-width: 420px) { .btn-lg { padding: 14px 18px; font-size: 1rem; gap: 8px; } }
+  :focus-visible { outline: 4px solid var(--ink); outline-offset: 3px; }
+
+  /* Encabezado */
+  header.site { background: var(--cream); border-bottom: 3px solid var(--ink); position: sticky; top: 0; z-index: 50; }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 76px; padding-top: 6px; padding-bottom: 6px; }
+  .logo { display: block; height: 60px; width: auto; }
+  .logo-link { display: inline-flex; border-radius: 12px; }
+  .hdr-btn .long { display: none; }
+  @media (min-width: 640px) { .hdr-btn .long { display: inline; } .hdr-btn .short { display: none; } .logo { height: 68px; } }
+
+  /* Héroe */
+  .hero { padding-top: 40px; }
+  .hero-grid { display: grid; gap: 32px; align-items: center; }
+  h1 { font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: -.01em; }
+  h1 .hl { color: var(--coral-text); }
+  .hero .lead { margin-bottom: 1.5rem; }
+  .hint { font-size: .9375rem; color: var(--ink-soft); margin: 14px 0 0; }
+  .hero-img { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 3px solid var(--ink); background: var(--white); }
+  @media (min-width: 900px) { .hero { padding-top: 64px; } .hero-grid { grid-template-columns: 1.1fr .9fr; gap: 56px; } }
+
+  /* Los 3 botones */
+  .three { background: var(--white); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  .cards { display: grid; gap: 20px; margin-top: 36px; padding: 0; list-style: none; }
+  .card { background: var(--cream); border: 3px solid var(--ink); border-radius: var(--radius); padding: 24px; }
+  .card h3 { font-size: 1.5rem; margin: 16px 0 .35em; }
+  .card p { margin: 0; color: var(--ink-soft); }
+  .tile { width: 72px; height: 72px; border-radius: 20px; border: 3px solid var(--ink); display: grid; place-items: center; }
+  .tile.c1 { background: var(--coral); } .tile.c2 { background: var(--turq); } .tile.c3 { background: var(--coral-tint); }
+  @media (min-width: 760px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+
+  /* Problema */
+  .pains { display: grid; gap: 16px; margin: 32px 0 0; padding: 0; list-style: none; }
+  .pains li { background: var(--white); border: 3px solid var(--ink); border-radius: var(--radius); padding: 20px 22px; font-weight: 500; }
+  .pains li::before { content: ""; display: block; width: 36px; height: 10px; border-radius: 999px; background: var(--coral); margin-bottom: 12px; }
+  .pains-end { margin-top: 28px; font-size: 1.25rem; font-weight: 700; }
+  .pains-end span { color: var(--turq-text); }
+  @media (min-width: 760px) { .pains { grid-template-columns: repeat(3, 1fr); } }
+
+  /* Cómo funciona */
+  .steps-sec { background: var(--turq); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  .steps-sec .eyebrow { color: var(--ink); }
+  .steps-sec .lead { color: var(--ink); }
+  .steps { display: grid; gap: 20px; margin: 36px 0 0; padding: 0; list-style: none; counter-reset: s; }
+  .steps li { counter-increment: s; background: var(--cream); border: 3px solid var(--ink); border-radius: var(--radius); padding: 24px; }
+  .steps li::before {
+    content: counter(s); display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+    background: var(--coral); border: 3px solid var(--ink); font-weight: 700; font-size: 1.375rem; margin-bottom: 14px;
+  }
+  .steps h3 { font-size: 1.25rem; margin-bottom: .3em; }
+  .steps p { margin: 0; color: var(--ink-soft); }
+  @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+
+  /* Por qué */
+  .why-grid { display: grid; gap: 32px; align-items: center; }
+  .why-img { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 3px solid var(--ink); background: var(--white); }
+  .benefits { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 16px; }
+  .benefits li { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; }
+  .benefits li::before { content: "✓"; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 12px; background: var(--turq); border: 3px solid var(--ink); font-weight: 700; line-height: 1; }
+  .benefits strong { display: block; }
+  .benefits span { color: var(--ink-soft); }
+  @media (min-width: 900px) { .why-grid { grid-template-columns: 1fr 1fr; gap: 56px; } }
+
+  /* Testimonios */
+  .testi { background: var(--white); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  .quotes { display: grid; gap: 20px; margin: 36px 0 0; padding: 0; list-style: none; }
+  .quote { margin: 0; background: var(--cream); border: 3px dashed var(--ink); border-radius: var(--radius); padding: 24px; }
+  .quote p { font-weight: 500; }
+  .quote footer { color: var(--ink-soft); font-size: .9375rem; }
+  @media (min-width: 760px) { .quotes { grid-template-columns: repeat(3, 1fr); } }
+
+  /* Preguntas */
+  .faq { max-width: 760px; margin: 32px auto 0; display: grid; gap: 14px; }
+  details { background: var(--white); border: 3px solid var(--ink); border-radius: 20px; }
+  summary { cursor: pointer; list-style: none; min-height: 60px; padding: 16px 56px 16px 20px; font-weight: 700; position: relative; border-radius: 17px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--coral); border: 2px solid var(--ink); font-size: 1.25rem; line-height: 1; }
+  details[open] summary::after { content: "−"; background: var(--turq); }
+  details p { padding: 0 20px 18px; margin: 0; color: var(--ink-soft); }
+
+  /* Llamado final */
+  .final { background: var(--turq); border-top: 3px solid var(--ink); text-align: center; }
+  .final h2 { font-size: clamp(1.75rem, 6vw, 2.75rem); }
+  .final p { max-width: 560px; margin: 0 auto 1.5rem; font-size: 1.125rem; }
+
+  /* Pie */
+  footer.site { background: var(--cream); border-top: 3px solid var(--ink); padding: 40px 0 112px; }
+  .foot-grid { display: grid; gap: 28px; }
+  footer.site .logo { height: 84px; margin-bottom: 8px; }
+  footer.site h2 { font-size: 1.0625rem; margin-bottom: .4em; }
+  footer.site ul { list-style: none; margin: 0; padding: 0; }
+  footer.site li { margin-bottom: .35em; }
+  .copy { margin-top: 28px; padding-top: 18px; border-top: 2px solid var(--ink); font-size: .9375rem; color: var(--ink-soft); }
+  @media (min-width: 760px) { .foot-grid { grid-template-columns: 1.2fr 1fr 1fr; } footer.site { padding-bottom: 40px; } }
+
+  /* Botón flotante (solo celular) */
+  .float {
+    position: fixed; right: 16px; bottom: 16px; z-index: 60;
+    display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 10px 22px 10px 16px;
+    border-radius: 999px; background: var(--coral); color: var(--ink); border: 3px solid var(--ink);
+    font: 700 1rem/1.1 'Poppins', system-ui, sans-serif; text-decoration: none; box-shadow: 0 6px 0 var(--ink);
+  }
+  .float:hover { background: #FF9783; }
+  @media (min-width: 900px) { .float { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo-link" href="#inicio" aria-label="Pago al día, ir al inicio"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494 348" role="img" aria-hidden="true" focusable="false">
+  <g transform="translate(0,5.25)">
+  <g fill="#FF7E67" stroke="#FF7E67" stroke-width="8.25" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M74.25 107.7H55.349999999999994V150.0H38.25V45.75H74.25Q86.25 45.75 94.57499999999999 49.875Q102.89999999999999 54.0 107.02499999999999 61.050000000000004Q111.14999999999999 68.10000000000001 111.14999999999999 76.8Q111.14999999999999 84.75 107.39999999999999 91.8Q103.64999999999999 98.85 95.4 103.275Q87.15 107.7 74.25 107.7ZM93.6 76.8Q93.6 59.7 74.25 59.7H55.349999999999994V93.75H74.25Q84.0 93.75 88.8 89.325Q93.6 84.9 93.6 76.8Z"/>
+    <path d="M169.05 66.0Q178.8 66.0 186.075 69.825Q193.35 73.65 197.7 79.35000000000001V67.35000000000001H214.95V150.0H197.7V137.7Q193.35 143.55 185.85 147.45Q178.35 151.35 168.75 151.35Q158.1 151.35 149.25 145.875Q140.4 140.4 135.22500000000002 130.575Q130.05 120.75 130.05 108.30000000000001Q130.05 95.85 135.22500000000002 86.25Q140.4 76.65 149.325 71.325Q158.25 66.0 169.05 66.0ZM172.65 80.85000000000001Q166.05 80.85000000000001 160.35000000000002 84.07500000000002Q154.65 87.30000000000001 151.125 93.525Q147.6 99.75 147.6 108.30000000000001Q147.6 116.85 151.125 123.3Q154.65 129.75 160.425 133.125Q166.2 136.5 172.65 136.5Q179.25 136.5 184.95 133.2Q190.64999999999998 129.9 194.17499999999998 123.525Q197.7 117.15 197.7 108.6Q197.7 100.05000000000001 194.17499999999998 93.75Q190.64999999999998 87.45 184.95 84.15Q179.25 80.85000000000001 172.65 80.85000000000001Z"/>
+    <path d="M307.65 79.35000000000001V67.35000000000001H324.9V151.35Q324.9 162.75 320.09999999999997 171.675Q315.29999999999995 180.6 306.22499999999997 185.7Q297.15 190.8 284.55 190.8Q267.75 190.8 256.65 182.925Q245.54999999999998 175.05 244.04999999999998 161.55H261.0Q262.95 168.0 269.325 171.975Q275.7 175.95 284.55 175.95Q294.9 175.95 301.275 169.64999999999998Q307.65 163.35 307.65 151.35V137.55Q303.29999999999995 143.4 295.875 147.375Q288.45 151.35 279.0 151.35Q268.2 151.35 259.275 145.875Q250.35 140.4 245.175 130.575Q240.0 120.75 240.0 108.30000000000001Q240.0 95.85 245.175 86.25Q250.35 76.65 259.275 71.325Q268.2 66.0 279.0 66.0Q288.59999999999997 66.0 296.025 69.825Q303.45 73.65 307.65 79.35000000000001ZM282.59999999999997 80.85000000000001Q276.0 80.85000000000001 270.29999999999995 84.07500000000002Q264.59999999999997 87.30000000000001 261.075 93.525Q257.55 99.75 257.55 108.30000000000001Q257.55 116.85 261.075 123.3Q264.59999999999997 129.75 270.375 133.125Q276.15 136.5 282.59999999999997 136.5Q289.2 136.5 294.9 133.2Q300.59999999999997 129.9 304.125 123.525Q307.65 117.15 307.65 108.6Q307.65 100.05000000000001 304.125 93.75Q300.59999999999997 87.45 294.9 84.15Q289.2 80.85000000000001 282.59999999999997 80.85000000000001Z"/>
+  </g>
+  <circle cx="392.25" cy="108.68" r="35.65" fill="none" stroke="#FF7E67" stroke-width="22.31"/>
+  <polyline points="379.51,110.14 389.31,119.94 407.44,98.39" fill="none" stroke="#42A8A1" stroke-width="14.28" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#42A8A1" stroke="#42A8A1" stroke-width="6.60" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M75.56999999999998 237.04500000000007Q83.36999999999998 237.04500000000007 89.18999999999997 240.10500000000008Q95.00999999999998 243.16500000000008 98.48999999999998 247.72500000000008V238.12500000000006H112.28999999999998V304.24500000000006H98.48999999999998V294.4050000000001Q95.00999999999998 299.08500000000004 89.00999999999998 302.20500000000004Q83.00999999999998 305.32500000000005 75.32999999999998 305.32500000000005Q66.80999999999997 305.32500000000005 59.729999999999976 300.94500000000005Q52.64999999999998 296.56500000000005 48.50999999999998 288.70500000000004Q44.369999999999976 280.8450000000001 44.369999999999976 270.88500000000005Q44.369999999999976 260.92500000000007 48.50999999999998 253.24500000000006Q52.64999999999998 245.56500000000005 59.78999999999998 241.30500000000006Q66.92999999999998 237.04500000000007 75.56999999999998 237.04500000000007ZM78.44999999999997 248.92500000000007Q73.16999999999999 248.92500000000007 68.60999999999999 251.50500000000005Q64.04999999999998 254.08500000000006 61.22999999999998 259.06500000000005Q58.40999999999998 264.0450000000001 58.40999999999998 270.88500000000005Q58.40999999999998 277.7250000000001 61.22999999999998 282.8850000000001Q64.04999999999998 288.0450000000001 68.66999999999999 290.74500000000006Q73.28999999999998 293.44500000000005 78.44999999999997 293.44500000000005Q83.72999999999998 293.44500000000005 88.28999999999996 290.80500000000006Q92.84999999999997 288.1650000000001 95.66999999999997 283.06500000000005Q98.48999999999998 277.9650000000001 98.48999999999998 271.12500000000006Q98.48999999999998 264.2850000000001 95.66999999999997 259.24500000000006Q92.84999999999997 254.20500000000007 88.28999999999996 251.56500000000005Q83.72999999999998 248.92500000000007 78.44999999999997 248.92500000000007Z"/>
+    <path d="M157.76999999999998 215.44500000000005V304.24500000000006H144.08999999999997V215.44500000000005Z"/>
+    <path d="M261.33 237.04500000000007Q267.80999999999995 237.04500000000007 274.10999999999996 239.86500000000007Q280.40999999999997 242.68500000000006 284.12999999999994 247.36500000000007V215.44500000000005H297.92999999999995V304.24500000000006H284.12999999999994V294.2850000000001Q280.77 299.08500000000004 274.83 302.20500000000004Q268.89 305.32500000000005 261.21 305.32500000000005Q252.56999999999996 305.32500000000005 245.42999999999995 300.94500000000005Q238.28999999999996 296.56500000000005 234.14999999999998 288.70500000000004Q230.00999999999996 280.8450000000001 230.00999999999996 270.88500000000005Q230.00999999999996 260.92500000000007 234.14999999999998 253.24500000000006Q238.28999999999996 245.56500000000005 245.42999999999995 241.30500000000006Q252.56999999999996 237.04500000000007 261.33 237.04500000000007ZM264.09 248.92500000000007Q258.80999999999995 248.92500000000007 254.24999999999994 251.50500000000005Q249.68999999999997 254.08500000000006 246.86999999999995 259.06500000000005Q244.04999999999995 264.0450000000001 244.04999999999995 270.88500000000005Q244.04999999999995 277.7250000000001 246.86999999999995 282.8850000000001Q249.68999999999997 288.0450000000001 254.30999999999995 290.74500000000006Q258.92999999999995 293.44500000000005 264.09 293.44500000000005Q269.36999999999995 293.44500000000005 273.92999999999995 290.80500000000006Q278.48999999999995 288.1650000000001 281.30999999999995 283.06500000000005Q284.12999999999994 277.9650000000001 284.12999999999994 271.12500000000006Q284.12999999999994 264.2850000000001 281.30999999999995 259.24500000000006Q278.48999999999995 254.20500000000007 273.92999999999995 251.56500000000005Q269.36999999999995 248.92500000000007 264.09 248.92500000000007Z"/>
+    <path d="M343.40999999999997 238.12500000000006V304.24500000000006H329.72999999999996V238.12500000000006ZM348.92999999999995 220.36500000000007 322.40999999999997 233.44500000000005V223.36500000000007L348.92999999999995 208.72500000000008Z"/>
+    <path d="M401.84999999999997 237.04500000000007Q409.65 237.04500000000007 415.46999999999997 240.10500000000008Q421.28999999999996 243.16500000000008 424.77 247.72500000000008V238.12500000000006H438.57V304.24500000000006H424.77V294.4050000000001Q421.28999999999996 299.08500000000004 415.28999999999996 302.20500000000004Q409.28999999999996 305.32500000000005 401.60999999999996 305.32500000000005Q393.09 305.32500000000005 386.01 300.94500000000005Q378.92999999999995 296.56500000000005 374.78999999999996 288.70500000000004Q370.65 280.8450000000001 370.65 270.88500000000005Q370.65 260.92500000000007 374.78999999999996 253.24500000000006Q378.92999999999995 245.56500000000005 386.06999999999994 241.30500000000006Q393.21 237.04500000000007 401.84999999999997 237.04500000000007ZM404.72999999999996 248.92500000000007Q399.45 248.92500000000007 394.89 251.50500000000005Q390.33 254.08500000000006 387.51 259.06500000000005Q384.69 264.0450000000001 384.69 270.88500000000005Q384.69 277.7250000000001 387.51 282.8850000000001Q390.33 288.0450000000001 394.95 290.74500000000006Q399.57 293.44500000000005 404.72999999999996 293.44500000000005Q410.01 293.44500000000005 414.57 290.80500000000006Q419.13 288.1650000000001 421.95 283.06500000000005Q424.77 277.9650000000001 424.77 271.12500000000006Q424.77 264.2850000000001 421.95 259.24500000000006Q419.13 254.20500000000007 414.57 251.56500000000005Q410.01 248.92500000000007 404.72999999999996 248.92500000000007Z"/>
+  </g>
+  </g>
+</svg></a>
+    <a class="btn btn-sm hdr-btn" href="https://wa.me/593989110015?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20la%20app%20Pago%20al%20d%C3%ADa%20para%20mi%20negocio" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
+      <span class="long">Escríbeme por WhatsApp</span><span class="short">Escríbeme</span>
+    </a>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- 1. Héroe -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">App para tiendas de barrio</span>
+        <h1>Cobra, paga y anota. <span class="hl">Tu tienda al día</span> sin complicaciones.</h1>
+        <p class="lead">Pago al día es la app con solo 3 botones para cobrar, pagar y anotar las deudas de tus clientes. Pídela por WhatsApp.</p>
+        <a class="btn btn-lg" href="https://wa.me/593989110015?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20la%20app%20Pago%20al%20d%C3%ADa%20para%20mi%20negocio" target="_blank" rel="noopener"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F2A2A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.5z"/><path d="M9 10.5h6M9 14h4"/></svg>Quiero mi app</a>
+        <p class="hint">Se abre WhatsApp con el mensaje ya escrito.</p>
+      </div>
+      <img class="hero-img" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 900%22%3E%3Crect width=%22800%22 height=%22900%22 fill=%22%23FFE8D6%22/%3E%3Crect x=%2214%22 y=%2214%22 width=%22772%22 height=%22872%22 rx=%2222%22 fill=%22none%22 stroke=%22%23C2432C%22 stroke-width=%225%22 stroke-dasharray=%2218 12%22/%3E%3Ctext x=%22400%22 y=%22442%22 text-anchor=%22middle%22 font-family=%22Poppins,Arial,sans-serif%22 font-weight=%22700%22 font-size=%2233%22 fill=%22%231F2A2A%22%3E%5BIMAGEN%5D Celular con la app%3C/text%3E%3Ctext x=%22400%22 y=%22500%22 text-anchor=%22middle%22 font-family=%22Poppins,Arial,sans-serif%22 font-size=%2228%22 fill=%22%231F2A2A%22%3EMedida sugerida: 800 %C3%97 900 px%3C/text%3E%3C/svg%3E" width="800" height="900" loading="lazy" alt="Marcador de imagen: celular mostrando la app Pago al día con sus tres botones (medida sugerida 800 × 900 px)">
+    </div>
+  </section>
+
+  <!-- 2. Los 3 botones -->
+  <section class="three" aria-labelledby="t-botones">
+    <div class="wrap center">
+      <span class="eyebrow">Así de simple</span>
+      <h2 id="t-botones">Tres botones. Nada más.</h2>
+      <p class="lead">Todo lo que haces en el día en tu tienda, en un solo lugar.</p>
+      <ul class="cards" style="text-align:left">
+        <li class="card">
+          <div class="tile c1" aria-hidden="true"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#1F2A2A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5M4.5 19.5h15"/></svg></div>
+          <h3>Cobrar</h3>
+          <p>Registra lo que te pagan tus clientes y mantén tu caja ordenada.</p>
+        </li>
+        <li class="card">
+          <div class="tile c2" aria-hidden="true"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#1F2A2A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V10m0 0-4.5 4.5M12 10l4.5 4.5M4.5 4.5h15"/></svg></div>
+          <h3>Pagar</h3>
+          <p>Anota lo que pagas a tus proveedores y recuerda lo que te falta por pagar.</p>
+        </li>
+        <li class="card">
+          <div class="tile c3" aria-hidden="true"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#1F2A2A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v14A1.5 1.5 0 0 1 17 20.5H7A1.5 1.5 0 0 1 5.5 19V5A1.5 1.5 0 0 1 7 3.5zM9 9h6M9 13h6M9 17h3"/></svg></div>
+          <h3>Anotar deudas</h3>
+          <p>Apunta los fiados de tus clientes sin libreta y sin perder la cuenta.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. ¿Te pasa esto? -->
+  <section aria-labelledby="t-problema">
+    <div class="wrap">
+      <span class="eyebrow">¿Te pasa esto?</span>
+      <h2 id="t-problema">Llevar las cuentas de la tienda no debería quitarte el sueño.</h2>
+      <ul class="pains">
+        <li>Los fiados están apuntados en una libreta que ya no cabe en el mostrador.</li>
+        <li>Se te olvida quién te debe y cuánto.</li>
+        <li>Lo que cobras y lo que pagas se mezcla en tu cabeza.</li>
+      </ul>
+      <p class="pains-end">Con Pago al día, <span>todo queda anotado en el mismo lugar.</span></p>
+    </div>
+  </section>
+
+  <!-- 4. Cómo funciona -->
+  <section class="steps-sec" id="como-funciona" aria-labelledby="t-pasos">
+    <div class="wrap center">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2 id="t-pasos">Empezar es fácil</h2>
+      <p class="lead">Un mensaje y listo.</p>
+      <ol class="steps" style="text-align:left">
+        <li>
+          <h3>Escríbenos por WhatsApp</h3>
+          <p>Toca el botón y te abrimos el chat con el mensaje ya escrito.</p>
+        </li>
+        <li>
+          <h3>Recibe tu enlace</h3>
+          <p>Te enviamos el enlace de descarga, o te asesoramos si tienes dudas.</p>
+        </li>
+        <li>
+          <h3>Cobra, paga y anota</h3>
+          <p>Abre la app y usa sus tres botones desde tu celular.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5. Por qué Pago al día -->
+  <section aria-labelledby="t-porque">
+    <div class="wrap why-grid">
+      <img class="why-img" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 960 720%22%3E%3Crect width=%22960%22 height=%22720%22 fill=%22%23FFE8D6%22/%3E%3Crect x=%2214%22 y=%2214%22 width=%22932%22 height=%22692%22 rx=%2222%22 fill=%22none%22 stroke=%22%23C2432C%22 stroke-width=%225%22 stroke-dasharray=%2218 12%22/%3E%3Ctext x=%22480%22 y=%22352%22 text-anchor=%22middle%22 font-family=%22Poppins,Arial,sans-serif%22 font-weight=%22700%22 font-size=%2240%22 fill=%22%231F2A2A%22%3E%5BIMAGEN%5D Tienda de barrio con la app%3C/text%3E%3Ctext x=%22480%22 y=%22420%22 text-anchor=%22middle%22 font-family=%22Poppins,Arial,sans-serif%22 font-size=%2234%22 fill=%22%231F2A2A%22%3EMedida sugerida: 960 %C3%97 720 px%3C/text%3E%3C/svg%3E" width="960" height="720" loading="lazy" alt="Marcador de imagen: dueño o dueña de una tienda de barrio usando la app en el mostrador (medida sugerida 960 × 720 px)">
+      <div>
+        <span class="eyebrow">Hecha para tu negocio</span>
+        <h2 id="t-porque">Pensada para tiendas como la tuya</h2>
+        <ul class="benefits">
+          <li><div><strong>Solo 3 botones</strong><span>Cobrar, Pagar y Anotar deudas. Sin menús complicados.</span></div></li>
+          <li><div><strong>Para dueños de tiendas y microempresarios</strong><span>Diseñada para el día a día del negocio de barrio.</span></div></li>
+          <li><div><strong>Atención por WhatsApp</strong><span>Pides tu enlace o una asesoría en el mismo chat que ya usas.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Testimonios -->
+  <section class="testi" aria-labelledby="t-testi">
+    <div class="wrap center">
+      <span class="eyebrow">Testimonios</span>
+      <h2 id="t-testi">Lo que dicen quienes la usan</h2>
+      <ul class="quotes" style="text-align:left">
+        <li><blockquote class="quote"><p>[PENDIENTE: testimonio real de un cliente]</p><footer>[PENDIENTE: nombre, negocio y ciudad]</footer></blockquote></li>
+        <li><blockquote class="quote"><p>[PENDIENTE: testimonio real de un cliente]</p><footer>[PENDIENTE: nombre, negocio y ciudad]</footer></blockquote></li>
+        <li><blockquote class="quote"><p>[PENDIENTE: testimonio real de un cliente]</p><footer>[PENDIENTE: nombre, negocio y ciudad]</footer></blockquote></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Preguntas frecuentes -->
+  <section id="preguntas" aria-labelledby="t-faq">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Preguntas frecuentes</span>
+      <h2 id="t-faq">Resolvemos tus dudas</h2></div>
+      <div class="faq">
+        <details>
+          <summary>¿Qué hace Pago al día?</summary>
+          <p>Es una app móvil para gestionar tus cobros, tus pagos y las deudas (fiados) de tus clientes. Funciona con tres botones: Cobrar, Pagar y Anotar deudas.</p>
+        </details>
+        <details>
+          <summary>¿Necesito saber de tecnología para usarla?</summary>
+          <p>No. La app está pensada para que se use con solo tres botones, sin pasos complicados.</p>
+        </details>
+        <details>
+          <summary>¿Cómo consigo la app?</summary>
+          <p>Escríbenos por WhatsApp. Te enviamos el enlace de descarga o te asesoramos si tienes preguntas.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p>¡Es totalmente gratis! Para mantener la app funcionando y sin costo para ti, mostramos algunos anuncios pequeños. No hay versión de pago ni suscripciones obligatorias.</p>
+        </details>
+        <details>
+          <summary>¿Sirve para mi negocio?</summary>
+          <p>Está hecha para dueños de tiendas de abarrotes y microempresarios de barrio. Si tienes dudas sobre tu caso, pregúntanos por WhatsApp.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Llamado final -->
+  <section class="final" aria-labelledby="t-final">
+    <div class="wrap">
+      <h2 id="t-final">Cobra, paga y anota. Así de fácil.</h2>
+      <p>Escríbenos por WhatsApp y pide tu enlace de descarga o una asesoría para tu negocio.</p>
+      <a class="btn btn-lg" href="https://wa.me/593989110015?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20la%20app%20Pago%20al%20d%C3%ADa%20para%20mi%20negocio" target="_blank" rel="noopener"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F2A2A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.5z"/><path d="M9 10.5h6M9 14h4"/></svg>Escríbeme por WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494 348" role="img" aria-label="Pago al día">
+  <g transform="translate(0,5.25)">
+  <g fill="#FF7E67" stroke="#FF7E67" stroke-width="8.25" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M74.25 107.7H55.349999999999994V150.0H38.25V45.75H74.25Q86.25 45.75 94.57499999999999 49.875Q102.89999999999999 54.0 107.02499999999999 61.050000000000004Q111.14999999999999 68.10000000000001 111.14999999999999 76.8Q111.14999999999999 84.75 107.39999999999999 91.8Q103.64999999999999 98.85 95.4 103.275Q87.15 107.7 74.25 107.7ZM93.6 76.8Q93.6 59.7 74.25 59.7H55.349999999999994V93.75H74.25Q84.0 93.75 88.8 89.325Q93.6 84.9 93.6 76.8Z"/>
+    <path d="M169.05 66.0Q178.8 66.0 186.075 69.825Q193.35 73.65 197.7 79.35000000000001V67.35000000000001H214.95V150.0H197.7V137.7Q193.35 143.55 185.85 147.45Q178.35 151.35 168.75 151.35Q158.1 151.35 149.25 145.875Q140.4 140.4 135.22500000000002 130.575Q130.05 120.75 130.05 108.30000000000001Q130.05 95.85 135.22500000000002 86.25Q140.4 76.65 149.325 71.325Q158.25 66.0 169.05 66.0ZM172.65 80.85000000000001Q166.05 80.85000000000001 160.35000000000002 84.07500000000002Q154.65 87.30000000000001 151.125 93.525Q147.6 99.75 147.6 108.30000000000001Q147.6 116.85 151.125 123.3Q154.65 129.75 160.425 133.125Q166.2 136.5 172.65 136.5Q179.25 136.5 184.95 133.2Q190.64999999999998 129.9 194.17499999999998 123.525Q197.7 117.15 197.7 108.6Q197.7 100.05000000000001 194.17499999999998 93.75Q190.64999999999998 87.45 184.95 84.15Q179.25 80.85000000000001 172.65 80.85000000000001Z"/>
+    <path d="M307.65 79.35000000000001V67.35000000000001H324.9V151.35Q324.9 162.75 320.09999999999997 171.675Q315.29999999999995 180.6 306.22499999999997 185.7Q297.15 190.8 284.55 190.8Q267.75 190.8 256.65 182.925Q245.54999999999998 175.05 244.04999999999998 161.55H261.0Q262.95 168.0 269.325 171.975Q275.7 175.95 284.55 175.95Q294.9 175.95 301.275 169.64999999999998Q307.65 163.35 307.65 151.35V137.55Q303.29999999999995 143.4 295.875 147.375Q288.45 151.35 279.0 151.35Q268.2 151.35 259.275 145.875Q250.35 140.4 245.175 130.575Q240.0 120.75 240.0 108.30000000000001Q240.0 95.85 245.175 86.25Q250.35 76.65 259.275 71.325Q268.2 66.0 279.0 66.0Q288.59999999999997 66.0 296.025 69.825Q303.45 73.65 307.65 79.35000000000001ZM282.59999999999997 80.85000000000001Q276.0 80.85000000000001 270.29999999999995 84.07500000000002Q264.59999999999997 87.30000000000001 261.075 93.525Q257.55 99.75 257.55 108.30000000000001Q257.55 116.85 261.075 123.3Q264.59999999999997 129.75 270.375 133.125Q276.15 136.5 282.59999999999997 136.5Q289.2 136.5 294.9 133.2Q300.59999999999997 129.9 304.125 123.525Q307.65 117.15 307.65 108.6Q307.65 100.05000000000001 304.125 93.75Q300.59999999999997 87.45 294.9 84.15Q289.2 80.85000000000001 282.59999999999997 80.85000000000001Z"/>
+  </g>
+  <circle cx="392.25" cy="108.68" r="35.65" fill="none" stroke="#FF7E67" stroke-width="22.31"/>
+  <polyline points="379.51,110.14 389.31,119.94 407.44,98.39" fill="none" stroke="#42A8A1" stroke-width="14.28" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#42A8A1" stroke="#42A8A1" stroke-width="6.60" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M75.56999999999998 237.04500000000007Q83.36999999999998 237.04500000000007 89.18999999999997 240.10500000000008Q95.00999999999998 243.16500000000008 98.48999999999998 247.72500000000008V238.12500000000006H112.28999999999998V304.24500000000006H98.48999999999998V294.4050000000001Q95.00999999999998 299.08500000000004 89.00999999999998 302.20500000000004Q83.00999999999998 305.32500000000005 75.32999999999998 305.32500000000005Q66.80999999999997 305.32500000000005 59.729999999999976 300.94500000000005Q52.64999999999998 296.56500000000005 48.50999999999998 288.70500000000004Q44.369999999999976 280.8450000000001 44.369999999999976 270.88500000000005Q44.369999999999976 260.92500000000007 48.50999999999998 253.24500000000006Q52.64999999999998 245.56500000000005 59.78999999999998 241.30500000000006Q66.92999999999998 237.04500000000007 75.56999999999998 237.04500000000007ZM78.44999999999997 248.92500000000007Q73.16999999999999 248.92500000000007 68.60999999999999 251.50500000000005Q64.04999999999998 254.08500000000006 61.22999999999998 259.06500000000005Q58.40999999999998 264.0450000000001 58.40999999999998 270.88500000000005Q58.40999999999998 277.7250000000001 61.22999999999998 282.8850000000001Q64.04999999999998 288.0450000000001 68.66999999999999 290.74500000000006Q73.28999999999998 293.44500000000005 78.44999999999997 293.44500000000005Q83.72999999999998 293.44500000000005 88.28999999999996 290.80500000000006Q92.84999999999997 288.1650000000001 95.66999999999997 283.06500000000005Q98.48999999999998 277.9650000000001 98.48999999999998 271.12500000000006Q98.48999999999998 264.2850000000001 95.66999999999997 259.24500000000006Q92.84999999999997 254.20500000000007 88.28999999999996 251.56500000000005Q83.72999999999998 248.92500000000007 78.44999999999997 248.92500000000007Z"/>
+    <path d="M157.76999999999998 215.44500000000005V304.24500000000006H144.08999999999997V215.44500000000005Z"/>
+    <path d="M261.33 237.04500000000007Q267.80999999999995 237.04500000000007 274.10999999999996 239.86500000000007Q280.40999999999997 242.68500000000006 284.12999999999994 247.36500000000007V215.44500000000005H297.92999999999995V304.24500000000006H284.12999999999994V294.2850000000001Q280.77 299.08500000000004 274.83 302.20500000000004Q268.89 305.32500000000005 261.21 305.32500000000005Q252.56999999999996 305.32500000000005 245.42999999999995 300.94500000000005Q238.28999999999996 296.56500000000005 234.14999999999998 288.70500000000004Q230.00999999999996 280.8450000000001 230.00999999999996 270.88500000000005Q230.00999999999996 260.92500000000007 234.14999999999998 253.24500000000006Q238.28999999999996 245.56500000000005 245.42999999999995 241.30500000000006Q252.56999999999996 237.04500000000007 261.33 237.04500000000007ZM264.09 248.92500000000007Q258.80999999999995 248.92500000000007 254.24999999999994 251.50500000000005Q249.68999999999997 254.08500000000006 246.86999999999995 259.06500000000005Q244.04999999999995 264.0450000000001 244.04999999999995 270.88500000000005Q244.04999999999995 277.7250000000001 246.86999999999995 282.8850000000001Q249.68999999999997 288.0450000000001 254.30999999999995 290.74500000000006Q258.92999999999995 293.44500000000005 264.09 293.44500000000005Q269.36999999999995 293.44500000000005 273.92999999999995 290.80500000000006Q278.48999999999995 288.1650000000001 281.30999999999995 283.06500000000005Q284.12999999999994 277.9650000000001 284.12999999999994 271.12500000000006Q284.12999999999994 264.2850000000001 281.30999999999995 259.24500000000006Q278.48999999999995 254.20500000000007 273.92999999999995 251.56500000000005Q269.36999999999995 248.92500000000007 264.09 248.92500000000007Z"/>
+    <path d="M343.40999999999997 238.12500000000006V304.24500000000006H329.72999999999996V238.12500000000006ZM348.92999999999995 220.36500000000007 322.40999999999997 233.44500000000005V223.36500000000007L348.92999999999995 208.72500000000008Z"/>
+    <path d="M401.84999999999997 237.04500000000007Q409.65 237.04500000000007 415.46999999999997 240.10500000000008Q421.28999999999996 243.16500000000008 424.77 247.72500000000008V238.12500000000006H438.57V304.24500000000006H424.77V294.4050000000001Q421.28999999999996 299.08500000000004 415.28999999999996 302.20500000000004Q409.28999999999996 305.32500000000005 401.60999999999996 305.32500000000005Q393.09 305.32500000000005 386.01 300.94500000000005Q378.92999999999995 296.56500000000005 374.78999999999996 288.70500000000004Q370.65 280.8450000000001 370.65 270.88500000000005Q370.65 260.92500000000007 374.78999999999996 253.24500000000006Q378.92999999999995 245.56500000000005 386.06999999999994 241.30500000000006Q393.21 237.04500000000007 401.84999999999997 237.04500000000007ZM404.72999999999996 248.92500000000007Q399.45 248.92500000000007 394.89 251.50500000000005Q390.33 254.08500000000006 387.51 259.06500000000005Q384.69 264.0450000000001 384.69 270.88500000000005Q384.69 277.7250000000001 387.51 282.8850000000001Q390.33 288.0450000000001 394.95 290.74500000000006Q399.57 293.44500000000005 404.72999999999996 293.44500000000005Q410.01 293.44500000000005 414.57 290.80500000000006Q419.13 288.1650000000001 421.95 283.06500000000005Q424.77 277.9650000000001 424.77 271.12500000000006Q424.77 264.2850000000001 421.95 259.24500000000006Q419.13 254.20500000000007 414.57 251.56500000000005Q410.01 248.92500000000007 404.72999999999996 248.92500000000007Z"/>
+  </g>
+  </g>
+</svg>
+        <p>Cobra, paga y anota. Así de fácil.</p>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="https://wa.me/593989110015?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20la%20app%20Pago%20al%20d%C3%ADa%20para%20mi%20negocio" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li>Dirección: [PENDIENTE]</li>
+          <li>Horario: [PENDIENTE]</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Redes sociales</h2>
+        <ul>
+          <li>Facebook: [PENDIENTE]</li>
+          <li>Instagram: [PENDIENTE]</li>
+          <li>TikTok: [PENDIENTE]</li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© 2026 Pago al día. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp (solo celular) -->
+<a class="float" href="https://wa.me/593989110015?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20la%20app%20Pago%20al%20d%C3%ADa%20para%20mi%20negocio" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F2A2A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.5z"/><path d="M9 10.5h6M9 14h4"/></svg>Escríbeme</a>
+
+</body>
+</html>
