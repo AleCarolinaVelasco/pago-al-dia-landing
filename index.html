@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pago al día | App para cobrar, pagar y anotar deudas en tu tienda</title>
+<title>Pago al día | App para tu tienda de barrio</title>
 <meta name="description" content="Pago al día es la app con solo 3 botones para cobrar, pagar y anotar las deudas (fiados) de tu tienda. Escríbenos por WhatsApp y pide tu enlace de descarga.">
 <meta name="theme-color" content="#FFF4E6">
 
@@ -13,11 +13,19 @@
 <meta property="og:site_name" content="Pago al día">
 <meta property="og:title" content="Pago al día | Cobra, paga y anota. Tu tienda al día sin complicaciones.">
 <meta property="og:description" content="La app con 3 botones (Cobrar, Pagar y Anotar deudas) para dueños de tiendas y microempresarios. Pídela por WhatsApp.">
-<!-- [PENDIENTE] og:url  -> la dirección pública final de esta página -->
-<!-- [PENDIENTE] og:image -> imagen de 1200 x 630 px con URL pública (por ejemplo, el logo sobre fondo crema) -->
+<meta property="og:url" content="https://alecarolinavelasco.github.io/pago-al-dia-landing/">
+<meta property="og:image" content="https://alecarolinavelasco.github.io/pago-al-dia-landing/tienda.jpg">
+<meta property="og:image:alt" content="Dueña de tienda usando la app Pago al día">
+
+<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pago al día | Cobra, paga y anota. Tu tienda al día sin complicaciones.">
+<meta name="twitter:description" content="La app con 3 botones (Cobrar, Pagar y Anotar deudas) para dueños de tiendas y microempresarios. Pídela por WhatsApp.">
+<meta name="twitter:image" content="https://alecarolinavelasco.github.io/pago-al-dia-landing/tienda.jpg">
+<meta name="twitter:image:alt" content="Dueña de tienda usando la app Pago al día">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 512%22 role=%22img%22 aria-label=%22Pago al d%C3%ADa%22%3E %3Crect width=%22512%22 height=%22512%22 rx=%22112%22 fill=%22%23FFF4E6%22/%3E %3Cg fill=%22%23FF7E67%22 stroke=%22%23FF7E67%22 stroke-width=%2219.92%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22%3E %3Cpath d=%22M248.50612244897957 288.61632653061224H185.76326530612243V429.0408163265306H128.99591836734692V82.9591836734694H248.50612244897957Q288.3428571428571 82.9591836734694 315.9795918367347 96.65306122448982Q343.61632653061224 110.34693877551024 357.3102040816326 133.75102040816327Q371.004081632653 157.1551020408163 371.004081632653 186.03673469387755Q371.004081632653 212.42857142857142 358.55510204081634 235.8326530612245Q346.1061224489796 259.23673469387757 318.71836734693875 273.9265306122449Q291.33061224489796 288.61632653061224 248.50612244897957 288.61632653061224ZM312.74285714285713 186.03673469387755Q312.74285714285713 129.26938775510206 248.50612244897957 129.26938775510206H185.76326530612243V242.30612244897958H248.50612244897957Q280.87346938775505 242.30612244897958 296.8081632653061 227.61632653061224Q312.74285714285713 212.9265306122449 312.74285714285713 186.03673469387755Z%22/%3E %3C/g%3E %3Cpolyline points=%22225.97,187.65 244.60,207.20 275.33,166.23%22 fill=%22none%22 stroke=%22%2342A8A1%22 stroke-width=%2232.59%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E %3C/svg%3E">
+<link rel="canonical" href="https://alecarolinavelasco.github.io/pago-al-dia-landing/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -166,7 +174,12 @@
   footer.site h2 { font-size: 1.0625rem; margin-bottom: .4em; }
   footer.site ul { list-style: none; margin: 0; padding: 0; }
   footer.site li { margin-bottom: .35em; }
-  .copy { margin-top: 28px; padding-top: 18px; border-top: 2px solid var(--ink); font-size: .9375rem; color: var(--ink-soft); }
+  .legal { margin-top: 24px; }
+  .legal ul { display: flex; flex-wrap: wrap; gap: 4px 28px; }
+  .legal li { margin: 0; }
+  .legal a { display: inline-block; padding: 10px 0; font-weight: 500; }
+  .aviso { margin: 16px 0 0; padding: 14px 18px; background: var(--white); border: 3px solid var(--ink); border-radius: 16px; font-size: .9375rem; color: var(--ink); }
+  .copy { margin-top: 12px; padding-top: 18px; border-top: 2px solid var(--ink); font-size: .9375rem; color: var(--ink-soft); }
   @media (min-width: 760px) { .foot-grid { grid-template-columns: 1.2fr 1fr 1fr; } footer.site { padding-bottom: 40px; } }
 
   /* Botón flotante (solo celular) */
@@ -179,6 +192,107 @@
   .float:hover { background: #FF9783; }
   @media (min-width: 900px) { .float { display: none; } }
 </style>
+
+<!-- Datos estructurados (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://alecarolinavelasco.github.io/pago-al-dia-landing/#organization",
+      "name": "Pago al día",
+      "url": "https://alecarolinavelasco.github.io/pago-al-dia-landing/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://alecarolinavelasco.github.io/pago-al-dia-landing/logo.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alecarolinavelasco.github.io/pago-al-dia-landing/#website",
+      "name": "Pago al día",
+      "url": "https://alecarolinavelasco.github.io/pago-al-dia-landing/",
+      "inLanguage": "es-EC",
+      "publisher": {
+        "@id": "https://alecarolinavelasco.github.io/pago-al-dia-landing/#organization"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Pago al día",
+  "description": "App móvil con 3 botones (Cobrar, Pagar y Anotar deudas) para que dueños de tiendas de abarrotes y microempresarios gestionen cobros, pagos y fiados.",
+  "image": "https://alecarolinavelasco.github.io/pago-al-dia-landing/tienda.jpg",
+  "url": "https://alecarolinavelasco.github.io/pago-al-dia-landing/",
+  "applicationCategory": "BusinessApplication",
+  "inLanguage": "es-EC",
+  "publisher": {
+    "@id": "https://alecarolinavelasco.github.io/pago-al-dia-landing/#organization"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://alecarolinavelasco.github.io/pago-al-dia-landing/",
+    "price": "0.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué hace Pago al día?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es una app móvil para gestionar tus cobros, tus pagos y las deudas (fiados) de tus clientes. Funciona con tres botones: Cobrar, Pagar y Anotar deudas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito saber de tecnología para usarla?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. La app está pensada para que se use con solo tres botones, sin pasos complicados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo consigo la app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escríbenos por WhatsApp. Te enviamos el enlace de descarga o te asesoramos si tienes preguntas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "¡Es totalmente gratis! Para mantener la app funcionando y sin costo para ti, mostramos algunos anuncios pequeños. No hay versión de pago ni suscripciones obligatorias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sirve para mi negocio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Está hecha para dueños de tiendas de abarrotes y microempresarios de barrio. Si tienes dudas sobre tu caso, pregúntanos por WhatsApp."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -391,12 +505,20 @@
       <div>
         <h2>Redes sociales</h2>
         <ul>
-          <li>Facebook: /PagoAlDiaApp</li>
+          <li>Facebook: @pagobaldia_app</li>
           <li>Instagram: @pagobaldia_app</li>
-          <li>TikTok: @pagobaldia</li>
+          <li>TikTok: @pagobaldia_app</li>
         </ul>
       </div>
     </div>
+    <nav class="legal" aria-label="Información legal y contacto">
+      <ul>
+        <li><a href="#">Aviso legal</a></li>
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <p class="aviso"><strong>Proyecto académico.</strong> Esta página es un trabajo de clase: la app, los testimonios, los nombres de negocios y los demás datos son ficticios.</p>
     <p class="copy">© 2026 Pago al día. Todos los derechos reservados.</p>
   </div>
 </footer>
